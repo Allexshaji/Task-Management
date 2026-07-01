@@ -6,6 +6,8 @@ const {
   login,
 } = require("../controllers/authController");
 
+console.log("AuthRoutes file is loaded");
+
 router.post("/register", register);
 
 router.post("/login", login);

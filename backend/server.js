@@ -16,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+console.log("Auth route is loading...");
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
