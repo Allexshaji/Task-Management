@@ -13,10 +13,19 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://task-management-1-7exb.onrender.com"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}));
+
+// Middleware
 app.use(express.json());
 
-console.log("Auth route is loading...");
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
